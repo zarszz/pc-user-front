@@ -1,0 +1,101 @@
+.container{
+  padding-top: 4%;
+}
+
+.col1{
+  width: 50%;
+}
+
+.col1 .head{
+  font-size: 20px;
+  padding-left: 20%;
+}
+
+
+.col1 .tukar{
+  padding-left: 20%;
+}
+
+.tukar .tukar-box{
+  width: 25%;
+  background: gray;
+  border-radius: 35px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+.col1 .tukar .tukar-box-text a{
+  font-size: 13px;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+}
+
+.col2{
+  width: 50%;
+}
+
+.col2 .table .t1{
+  width: 20%;
+  display: inline-block;
+}
+
+.col2 .table .t1 .t1-box{
+  background: grey;
+  width: 100%;
+  height: 120px;
+}
+
+.col2 .table .t1 .t1-description{
+  text-align: center;
+}
+
+.col2 .table .t2{
+  width: 20%;
+  display: inline-block;
+  padding-left: 150px;
+}
+
+.col2 .table .t2 .t2-box{
+  background: grey;
+  width: 100%;
+  height: 120px;
+
+}
+
+.col2 .table .t2 .t2-description{
+  text-align: center;
+}
+
+.col2 .table .t3{
+  width: 20%;
+  display: inline-block;
+}
+
+.col2 .table .t3 .t3-box{
+  width: 100%;
+  background: grey;
+  height: 120px;
+
+}
+
+.col2 .table .t3 .t3-description{
+  text-align: center;
+}
+
+.col2 .table .t4{
+  padding-left: 150px;
+  width: 20%;
+  display: inline-block;
+}
+
+.col2 .table .t4 .t4-box{
+  width: 100%;
+  background: grey;
+  height: 120px;
+}
+
+.col2 .table .t4 .t4-description{
+  text-align: center;
+}
