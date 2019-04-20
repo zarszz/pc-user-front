@@ -36,14 +36,14 @@ class Login extends Component {
   }
   render() {
 
-    if (this.state.redirectToReferrer || sessionStorage.getItem('api-token')) {
+    if (this.state.redirectToReferrer || sessionStorage.getItem('userData')) {
       return (<Redirect to={'/user-dashboard'} />)
     }
 
     return (
       <div>>
         <Helmet>
-          <title>{TITLE} </title>
+          <title>{ TITLE } </title>
         </Helmet>
 
         <div className="row" id="Body">
@@ -57,7 +57,7 @@ class Login extends Component {
             <a href="/signup">Registration</a>
           </div>
         </div>
-      </div>
+        </div>
     );
   }
 }
