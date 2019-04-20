@@ -4,7 +4,6 @@ export function PostData(userData) {
     fetch(BaseURL, {
       method: "POST",
       headers:{
-        "Access-Control-Allow-Origin": "*",
         "Content-Type": "Application/json",
       },
       body: JSON.stringify(userData),
