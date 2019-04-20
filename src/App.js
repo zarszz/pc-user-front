@@ -10,19 +10,20 @@ import HowItWork from './common/how-it-works';
 import LandingPage from './landing-page';
 
 import UserDashboard from './user/user-dashboard';
-import UserSignIn from './user/signin';
-import UserSignUpPage from './user/signup';
+import Login from './user/user-feature/signin';
+import UserSignUpPage from './user/user-feature/signup';
 
 
 
 class App extends Component {
+
   render() {
     return (
       <div>
         <Router>
           <Header />
           <Route exact path="/" component={LandingPage} />
-          <Route path ="/signin" component={UserSignIn} />
+          <Route path ="/signin" component={Login} />
           <Route path ="/how-it-works" component={HowItWork} />
           <Route path ="/reward" component={Reward} />
           <Route path ="/user-dashboard" component={UserDashboard} />

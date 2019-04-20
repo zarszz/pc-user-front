@@ -18,8 +18,10 @@ class LandingPage extends React.Component {
             <br />
           </div>
           <div className="option">
-            <a href="/user-dashboard">Tukar botol plastik</a>
-            <a href="/how-it-works">Pelajari lebih lanjut</a>
+            <div className="border-option">
+              <a href="/user-dashboard">Tukar botol plastik</a>
+              <a href="/how-it-works">Pelajari lebih lanjut</a>
+            </div>
           </div>
         </div>
         <div className="col2">
