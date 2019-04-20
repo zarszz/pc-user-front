@@ -1,22 +1,16 @@
-.form {
-  text-align: center;
+.reg-form{
+  padding-top: 5%;
 }
 
-.login-page {
-  padding-top:5%;
-  width: 360px;
-  margin: auto;
-}
-.form {
+.register-form {
   position: relative;
   z-index: 1;
-  background: #FFFFFF;
   max-width: 360px;
   margin: 0 auto 100px;
   padding: 45px;
   text-align: center;
 }
-.form input {
+.register-form input {
   font-family: "Roboto", sans-serif;
   outline: 0;
   background: #f2f2f2;
@@ -27,7 +21,7 @@
   box-sizing: border-box;
   font-size: 14px;
 }
-.form button {
+.register-form button {
   font-family: "Roboto", sans-serif;
   text-transform: uppercase;
   outline: 0;
@@ -41,18 +35,15 @@
   transition: all 0.3 ease;
   cursor: pointer;
 }
-.form button:hover,.form button:active,.form button:focus {
-  background: #43A047;
+.register-form button:hover,.form button:active,.form button:focus {
+  background: gray;
 }
-.form .message {
+.register-form .message {
   margin: 15px 0 0;
   color: #b3b3b3;
   font-size: 12px;
 }
-.form .message a {
+.register-form .message a {
   color: gray;
   text-decoration: none;
-}
-.form .register-form {
-  display: none;
-}
+} 

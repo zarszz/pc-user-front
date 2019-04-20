@@ -24,6 +24,7 @@ class App extends Component {
           <Header />
           <Route exact path="/" component={LandingPage} />
           <Route path ="/signin" component={Login} />
+          <Route path ="/signup" component={UserSignUpPage} />
           <Route path ="/how-it-works" component={HowItWork} />
           <Route path ="/reward" component={Reward} />
           <Route path ="/user-dashboard" component={UserDashboard} />

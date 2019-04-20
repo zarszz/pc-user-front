@@ -5,8 +5,9 @@ import { Helmet } from 'react-helmet';
 import { PostData } from './postData';
 
 import './signin.css'
+import { Link } from 'react-router-dom/cjs/react-router-dom';
 
-const TITLE = 'Daftar';
+const TITLE = 'Sign In';
 
 class Login extends Component {
   constructor() {
@@ -46,17 +47,21 @@ class Login extends Component {
     return (
       <div>
         <Helmet>
-          <title>{ TITLE } </title>
+          <title>{TITLE} </title>
         </Helmet>
 
+        <div className="login-page">
           <div className="form">
-            <h2>Login</h2>
-            <input type="email" name="email" placeholder= "email" onChange={this.onChange} /><br />
-            <input type="password" name="password" placeholder="password"conChange={this.onChange} /> <br />
-            <button type="submit" value="Login" onClick={this.login} >Login</button>
-            <a href="/signup">Registration</a>
+            <div className="login-form">
+              <h1><center>Sign In</center></h1>
+              <input type="text" placeholder="email" onchange={this.Onchange} />
+              <input type="password" placeholder="password" onchange={this.Onchange} />
+              <button onClick={this.login}>login</button>
+              <p className="message">Not registered? <p><Link to="/signup">Register</Link></p></p>
+            </div>
           </div>
         </div>
+      </div>
     );
   }
 }
