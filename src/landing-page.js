@@ -2,6 +2,7 @@ import React from 'react';
 import Helmet from 'react-helmet';
 
 import './landing-page.css';
+import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 
 const title = 'Dikumpul - Sampahmu Menjadi Hal Menarik';
 
@@ -25,8 +26,9 @@ class LandingPage extends React.Component {
           </div>
           <div className="option">
             <div className="border-option">
-              <a href="/user-dashboard">Tukar botol plastik</a>
-              <a href="/how-it-works">Pelajari lebih lanjut</a>
+              <span><Link to ="/signin">Tukar botol plastik</Link></span>
+              <span> </span>
+              <span><Link to ="how-it-works">Pelajari lebih lanjut</Link></span>
             </div>
           </div>
         </div>
