@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
-import { PostData } from './postData';
 import { Helmet } from 'react-helmet';
+
+import { PostData } from './postData';
+
+import './signin.css'
 
 const TITLE = 'Daftar';
 
@@ -41,22 +44,18 @@ class Login extends Component {
     }
 
     return (
-      <div>>
+      <div>
         <Helmet>
           <title>{ TITLE } </title>
         </Helmet>
 
-        <div className="row" id="Body">
-          <div className="medium-5 columns left">
-            <h4>Login</h4>
-            <label>email</label>
-            <input type="email" name="email" onChange={this.onChange} />
-            <label>Password</label>
-            <input type="password" name="password" onChange={this.onChange} />
-            <input type="submit" value="Login" onClick={this.login} />
+          <div className="form">
+            <h2>Login</h2>
+            <input type="email" name="email" placeholder= "email" onChange={this.onChange} /><br />
+            <input type="password" name="password" placeholder="password"conChange={this.onChange} /> <br />
+            <button type="submit" value="Login" onClick={this.login} >Login</button>
             <a href="/signup">Registration</a>
           </div>
-        </div>
         </div>
     );
   }

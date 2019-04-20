@@ -1,10 +1,17 @@
 import React from 'react';
 import './reward.css';
 
+import Helmet from 'react-helmet';
+
+const title = 'Rewards';
+
 class Reward extends React.Component {
   render() {
     return (
       <div>
+        <Helmet>
+          <title>{ title }</title>
+        </Helmet>
         <div className="container">
           <div className="col1">
             <div className="head">

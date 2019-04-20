@@ -1,10 +1,17 @@
 import React from 'react';
+import Helmet from 'react-helmet';
+
 import './how-it-works.css';
+
+const title = 'How Its Work ??';
 
 class HowItWork extends React.Component {
   render() {
     return (
       <div>
+        <Helmet>
+          <title> {title} </title>
+        </Helmet>
         <div>
           <div className="title">
             <p>How it works</p>

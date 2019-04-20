@@ -3,9 +3,10 @@ export function PostData(userData) {
   return new Promise((resolve, reject) => {
     fetch(BaseURL, {
       method: "POST",
-      headers:{
-        "Content-Type": "Application/json",
-      },
+      headers:new Headers({
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+      }),
       body: JSON.stringify(userData),
     })
       .then((response) => response.json())

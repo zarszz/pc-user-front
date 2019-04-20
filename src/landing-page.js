@@ -1,11 +1,17 @@
 import React from 'react';
+import Helmet from 'react-helmet';
+
 import './landing-page.css';
 
+const title = 'Dikumpul - Sampahmu Menjadi Hal Menarik';
 
 class LandingPage extends React.Component {
   render() {
     return (
       <div>
+        <Helmet>
+          <title>{title}</title>
+        </Helmet>
         <div className="col1">
           <div className="headline">
             <h1>Headline</h1>
