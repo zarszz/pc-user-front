@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import { PostData } from './postData';
+import { Helmet } from 'react-helmet';
+
+const TITLE = 'Daftar';
 
 class Login extends Component {
   constructor() {
@@ -33,22 +36,26 @@ class Login extends Component {
   }
   render() {
 
-
-    if (this.state.redirectToReferrer || sessionStorage.getItem('userData')) {
+    if (this.state.redirectToReferrer || sessionStorage.getItem('api-token')) {
       return (<Redirect to={'/user-dashboard'} />)
     }
 
-
     return (
-      <div className="row" id="Body">
-        <div className="medium-5 columns left">
-          <h4>Login</h4>
-          <label>email</label>
-          <input type="email" name="email" onChange={this.onChange} />
-          <label>Password</label>
-          <input type="password" name="password" onChange={this.onChange} />
-          <input type="submit" value="Login" onClick={this.login} />
-          <a href="/signup">Registration</a>
+      <div>>
+        <Helmet>
+          <title>{TITLE} </title>
+        </Helmet>
+
+        <div className="row" id="Body">
+          <div className="medium-5 columns left">
+            <h4>Login</h4>
+            <label>email</label>
+            <input type="email" name="email" onChange={this.onChange} />
+            <label>Password</label>
+            <input type="password" name="password" onChange={this.onChange} />
+            <input type="submit" value="Login" onClick={this.login} />
+            <a href="/signup">Registration</a>
+          </div>
         </div>
       </div>
     );
