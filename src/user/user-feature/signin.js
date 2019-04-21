@@ -3,7 +3,6 @@ import { Redirect } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom/cjs/react-router-dom';
 
-import { PostData } from './postData';
 import {login} from '../../manage-api/_actions/user.actions';
 
 import './signin.css'
@@ -40,13 +39,11 @@ class Login extends Component {
     const { dispatch } = this.props;
     if (email && password) {
       dispatch(login(email, password));
+      return <Redirect to ="/user-dasrboard"></Redirect>
     }
   }
 
   render() {
-
-    const { loggingIn } = this.props;
-    const { email, password, submitted } = this.state;
 
     return (
       <div>
@@ -58,11 +55,10 @@ class Login extends Component {
           <div className="form">
             <div className="login-form">
               <h1><center>Sign In</center></h1>
-              <input type="text" name="email" placeholder="email" value={email} onchange={this.handleChange} />
-              <input type="password" placeholder="password" onchange={this.handleChange} />
-              {submitted && !password && <div>Password is required</div>}
+              <input type="text" name="email" placeholder="email" onchange={this.handleChange} />
+              <input type="password" name="password" placeholder="password" onchange={this.handleChange} />
               <div className="form-group">
-                <button className="btn btn-primary" onClick={this.handleSubmit}>Login</button>
+                <button className="btn btn-primary" onclick={this.handleSubmit}>Login</button>
                 <Link to="/register" className="btn btn-link">Register</Link>
               </div>
               <p className="message">Not registered? <p><Link to="/signup">Register</Link></p></p>
