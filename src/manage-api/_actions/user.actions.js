@@ -12,7 +12,6 @@ export function login(email, password) {
             .then(
                 user => { 
                     dispatch(success(user));
-                    history.push('/');
                 },
                 error => {
                     dispatch(failure(error.toString()));

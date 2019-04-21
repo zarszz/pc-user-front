@@ -59,9 +59,8 @@ class Login extends Component {
               <input type="password" name="password" placeholder="password" onchange={this.handleChange} />
               <div className="form-group">
                 <button className="btn btn-primary" onclick={this.handleSubmit}>Login</button>
-                <Link to="/register" className="btn btn-link">Register</Link>
               </div>
-              <p className="message">Not registered? <p><Link to="/signup">Register</Link></p></p>
+              <p className="message">Not registered? <span><Link to="/signup">Register</Link></span></p>
             </div>
           </div>
         </div>
