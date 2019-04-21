@@ -1,48 +1,52 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
+import { Link } from 'react-router-dom/cjs/react-router-dom';
 
 import { PostData } from './postData';
+import {login} from '../../manage-api/_actions/user.actions';
 
 import './signin.css'
-import { Link } from 'react-router-dom/cjs/react-router-dom';
 
 const TITLE = 'Sign In';
 
 class Login extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
+
+    // reset login status
+    //this.props.dispatch(login());
+
     this.state = {
-      email: "",
-      password: "",
-      redirectToReferrer: false
+      email: '',
+      password: '',
+      submitted: false
     };
-    this.login = this.login.bind(this);
-    this.onChange = this.onChange.bind(this);
+
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  handleChange(e) {
+    const { name, value } = e.target;
+    this.setState({ [name]: value });
+  }
 
-  login() {
-    if (this.state.email && this.state.password) {
-      PostData(this.state).then((result) => {
-        let responseJson = result;
-        if (responseJson.userData) {
-          sessionStorage.setItem('userData', JSON.stringify(responseJson));
-          this.setState({ redirectToReferrer: true });
-        }
-      });
+  handleSubmit(e) {
+    e.preventDefault();
+
+    this.setState({ submitted: true });
+    const { email, password } = this.state;
+    const { dispatch } = this.props;
+    if (email && password) {
+      dispatch(login(email, password));
     }
   }
 
-
-  onChange(e) {
-    this.setState({ [e.target.name]: e.target.value });
-  }
   render() {
 
-    if (this.state.redirectToReferrer || sessionStorage.getItem('userData')) {
-      return (<Redirect to={'/user-dashboard'} />)
-    }
+    const { loggingIn } = this.props;
+    const { email, password, submitted } = this.state;
 
     return (
       <div>
@@ -54,9 +58,13 @@ class Login extends Component {
           <div className="form">
             <div className="login-form">
               <h1><center>Sign In</center></h1>
-              <input type="text" placeholder="email" onchange={this.Onchange} />
-              <input type="password" placeholder="password" onchange={this.Onchange} />
-              <button onClick={this.login}>login</button>
+              <input type="text" name="email" placeholder="email" value={email} onchange={this.handleChange} />
+              <input type="password" placeholder="password" onchange={this.handleChange} />
+              {submitted && !password && <div>Password is required</div>}
+              <div className="form-group">
+                <button className="btn btn-primary" onClick={this.handleSubmit}>Login</button>
+                <Link to="/register" className="btn btn-link">Register</Link>
+              </div>
               <p className="message">Not registered? <p><Link to="/signup">Register</Link></p></p>
             </div>
           </div>
@@ -65,4 +73,5 @@ class Login extends Component {
     );
   }
 }
+
 export default Login;

@@ -4,7 +4,7 @@ import Helmet from 'react-helmet';
 import './landing-page.css';
 import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 
-const title = 'Dikumpul - Sampahmu Menjadi Hal Menarik';
+const title = 'Ditampung - Sampahmu Menjadi Hal Menarik';
 
 class LandingPage extends React.Component {
   render() {
